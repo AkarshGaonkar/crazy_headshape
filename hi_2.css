@@ -1,0 +1,79 @@
+.flower {
+    position: relative;
+    width: 100px;
+    height: 100px;
+    background: yellow;
+    border-radius: 50%;
+    margin: 50px auto;
+    overflow: visible; /* Ensure the center circle is fully visible */
+}
+
+.flower::before,
+.flower::after {
+    content: '';
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    background: lightcoral; /* Light red color */
+    border-radius: 50%;
+}
+
+.flower::before {
+    top: -50px;
+    left: 0;
+}
+
+.flower::after {
+    top: 0;
+    left: -50px;
+}
+
+.flower .petal {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    background: red; /* Red color */
+    border-radius: 50%;
+    z-index: 1; /* Ensure petals are above the stem */
+}
+
+.flower .petal:nth-child(1) {
+    top: -50px;
+    left: 0;
+}
+
+.flower .petal:nth-child(2) {
+    top: 0;
+    left: -50px;
+}
+
+.flower .petal:nth-child(3) {
+    top: 0;
+    left: 50px;
+}
+
+.flower .petal:nth-child(4) {
+    top: 50px;
+    left: 0;
+}
+
+.flower .center {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    background: black;
+    border-radius: 50%;
+    top: 25px;
+    left: 25px;
+    z-index: 2; /* Ensure center is above the petals */
+}
+
+.flower .stem {
+    position: absolute;
+    width: 20px;
+    height: 150px;
+    background: green;
+    top: 100px;
+    left: 40px;
+    z-index: 0; /* Ensure stem is below the petals */
+}
